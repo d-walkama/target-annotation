@@ -1,4 +1,4 @@
-# Analysis Functions (analysis-functions)
+# Target-Annotation
 
 This conda package will provide modules to annotate prospective targets using API requests to OpenTargets and Pharos, finally building tables that flatten the API results.
 

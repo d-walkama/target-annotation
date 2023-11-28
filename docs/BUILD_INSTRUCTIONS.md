@@ -1,8 +1,4 @@
----
-title: Conda Build Instructions
-editor:
-    render-on-save: true
----
+# Build Instructions
 
 1. In order to build conda packages, you must install conda build:
 
@@ -18,9 +14,9 @@ editor:
     ```
 The reason we want to do this is so that the versioneer package sets the package version equal to the git tag. If the working directory is not clean, the package version will be tagged as "dirty".
 
-3. Modify requirements.txt to include any package requirements.
+1. Modify requirements.txt to include any package requirements.
 
-4. Run:
+2. Run:
 
     ```bash
     ./make_build
