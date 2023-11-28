@@ -8,14 +8,13 @@ Here are the instructions for installing the target-annotation package into a Co
 
 ```bash
 conda config --add channels conda-forge
-conda config --add channels file:///<build folder dir>
 conda config --set channel_priority strict
 ```
 
 2. Now we can make an environment for using target-annotation:
 
 ```bash
-conda create -n target-annotation target-annotation
+conda create -n target-annotation -c ./build target-annotation
 ```
 
 3. Finally lets make a kernel for Jupyterhub:

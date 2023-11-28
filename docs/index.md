@@ -8,6 +8,7 @@
 
 install
 TargetAnnotation_example
+ExtractTable_example
 reference
 
 ````
