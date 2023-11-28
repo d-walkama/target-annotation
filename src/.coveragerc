@@ -1,0 +1,4 @@
+[report]
+omit =
+    target_annotation/__main__.py
+    target_annotation/_version.py

@@ -1,0 +1,51 @@
+{% set data = load_setup_py_data() %}
+
+package:
+  name: target-annotation
+  version: {{ data['version'] }}
+
+source:
+  path: ../src
+
+build:
+  # If the installation is complex, or different between Unix and Windows, use
+  # separate bld.bat and build.sh files instead of this key.  Add the line
+  # "skip: True  # [py<35]" (for example) to limit to Python 3.5 and newer, or
+  # "skip: True  # [not win]" to limit to Windows.
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
+  noarch: python
+  
+
+requirements:
+  # if you need compilers, uncomment these
+  #    read more at https://docs.conda.io/projects/conda-build/en/latest/resources/compiler-tools.html
+  build:
+    - setuptools
+  #   - {{ compilers('c') }}
+  host:
+    - python>=3.10
+    - pip
+  run:
+    - python>=3.10
+    # dependencies are defined in setup.py
+    {% for dep in data['install_requires'] %}
+    - {{ dep.lower() }}
+    {% endfor %}
+
+test:
+  source_files:
+    - setup.cfg
+    - target_annotation/
+    - tests/
+    - .coveragerc
+  imports:
+    - target_annotation
+  requires:
+    - pip
+    - pytest
+    - pytest-cov
+  commands:
+    - pytest --cov=target_annotation tests
+
+about:
+  summary: This package will provide modules to annotate lists of targets
