@@ -1,6 +1,6 @@
 # Analysis Functions (analysis-functions)
 
-This conda package will provide modules to annotate prospective targets, building tables that merge annotations with modelling artifacts.
+This conda package will provide modules to annotate prospective targets using API requests to OpenTargets and Pharos, finally building tables that flatten the API results.
 
 How to build the conda package: [build instructions](docs/BUILD_INSTRUCTIONS.md)
 

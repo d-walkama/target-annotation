@@ -1,0 +1,1472 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Target Annotation Example" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="TargetAnnotation_example.html" />
+<meta property="og:site_name" content="analysis-functions" />
+<meta property="og:description" content="Get list of targets: Create and Run the Workflow: Annotation results: Fields retrieved from OpenTargets for each target: Examples of the OT fields: Here we show a single evidence for ENSG0000013020..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="/_images/social_previews/summary_TargetAnnotation_example_b2a715ce.png" />
+<meta property="og:image:alt" content="Get list of targets: Create and Run the Workflow: Annotation results: Fields retrieved from OpenTargets for each target: Examples of the OT fields: Here we s..." />
+<meta name="description" content="Get list of targets: Create and Run the Workflow: Annotation results: Fields retrieved from OpenTargets for each target: Examples of the OT fields: Here we show a single evidence for ENSG0000013020..." />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Extract Table example" href="ExtractTable_example.html" /><link rel="prev" title="Conda Install Instructions" href="install.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Target Annotation Example - analysis-functions 1.0.0+0.g7994698.dirty documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/collapsible_container.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="_static/table.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f0f0f0;
+  --color-code-foreground: black;
+  --color-brand-primary: #0288d1;
+  --color-brand-content: #2a5adf;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #5eb8ff;
+  --color-brand-content: #368ce2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #263238;
+  --color-code-foreground: #EEFFFF;
+  --color-brand-primary: #5eb8ff;
+  --color-brand-content: #368ce2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">analysis-functions 1.0.0+0.g7994698.dirty documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Conda Install Instructions</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Target Annotation Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtractTable_example.html">Extract Table example</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="reference.html"><span class="fa fa-list"></span> API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of  API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.target_annotation.html">Target Annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.extract_table.html">Extract Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.open_targets.html">Open Targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.pharos.html">Pharos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.retry.html">Retry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.util.html">Util</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="Target-Annotation-Example">
+<h1>Target Annotation Example<a class="headerlink" href="#Target-Annotation-Example" title="Link to this heading">#</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">target_annotation</span> <span class="kn">import</span> <span class="n">TargetAnnotation</span>
+<span class="kn">from</span> <span class="nn">target_annotation.utils.util</span> <span class="kn">import</span> <span class="n">get_ensembl_from_uniprot</span>
+</pre></div>
+</div>
+</div>
+<section id="Get-list-of-targets">
+<h2>Get list of targets<a class="headerlink" href="#Get-list-of-targets" title="Link to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results_path</span> <span class="o">=</span> <span class="s2">&quot;~/results&quot;</span>
+
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;P05067&quot;</span><span class="p">,</span> <span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">]</span>  <span class="c1"># uniprot id and an ensemble id for two targets</span>
+
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">get_ensembl_from_uniprot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;ENSG.*&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="n">x</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">targets</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Create-and-Run-the-Workflow">
+<h2>Create and Run the Workflow<a class="headerlink" href="#Create-and-Run-the-Workflow" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">TargetAnnotation</span><span class="p">(</span>
+    <span class="n">targets</span><span class="o">=</span><span class="n">targets</span><span class="p">,</span>
+    <span class="n">disease_code</span><span class="o">=</span><span class="s2">&quot;MONDO_0004975&quot;</span><span class="p">,</span>
+    <span class="n">results_path</span> <span class="o">=</span> <span class="n">results_path</span>
+<span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+OT: target annotation...: 100%|██████████| 2/2 [00:00&lt;00:00,  8.15it/s]
+OT: disease annotation...: 100%|██████████| 2/2 [00:00&lt;00:00,  2.63it/s]
+Pharos: target annotation...: 100%|██████████| 2/2 [00:00&lt;00:00,  7.70it/s]
+</pre></div></div>
+</div>
+</section>
+<section id="Annotation-results">
+<h2>Annotation results<a class="headerlink" href="#Annotation-results" title="Link to this heading">#</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;ENSG00000142192&#39;, &#39;ENSG00000130203&#39;])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;OpenTargets&#39;, &#39;OpenTargets_disease_evidence&#39;, &#39;Pharos&#39;])
+</pre></div></div>
+</div>
+<section id="Fields-retrieved-from-OpenTargets-for-each-target">
+<h3>Fields retrieved from OpenTargets for each target<a class="headerlink" href="#Fields-retrieved-from-OpenTargets-for-each-target" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;OpenTargets&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;id&#39;, &#39;approvedSymbol&#39;, &#39;biotype&#39;, &#39;proteinIds&#39;, &#39;geneOntology&#39;, &#39;targetClass&#39;, &#39;functionDescriptions&#39;, &#39;tractability&#39;, &#39;geneticConstraint&#39;, &#39;pathways&#39;, &#39;expressions&#39;, &#39;associatedDiseases&#39;, &#39;isEssential&#39;, &#39;depMapEssentiality&#39;, &#39;chemicalProbes&#39;, &#39;knownDrugs&#39;, &#39;safetyLiabilities&#39;])
+</pre></div></div>
+</div>
+</section>
+<section id="Examples-of-the-OT-fields">
+<h3>Examples of the OT fields<a class="headerlink" href="#Examples-of-the-OT-fields" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;OpenTargets&quot;</span><span class="p">][</span><span class="s2">&quot;functionDescriptions&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;APOE is an apolipoprotein, a protein associating with lipid particles, that mainly functions in lipoprotein-mediated lipid transport between organs via the plasma and interstitial fluids (PubMed:6860692, PubMed:1911868, PubMed:14754908). APOE is a core component of plasma lipoproteins and is involved in their production, conversion and clearance (PubMed:6860692, PubMed:2762297, PubMed:1911868, PubMed:1917954, PubMed:9395455, PubMed:14754908, PubMed:23620513). Apolipoproteins are amphipathic molecules that interact both with lipids of the lipoprotein particle core and the aqueous environment of the plasma (PubMed:6860692, PubMed:2762297, PubMed:9395455). As such, APOE associates with chylomicrons, chylomicron remnants, very low density lipoproteins (VLDL) and intermediate density lipoproteins (IDL) but shows a preferential binding to high-density lipoproteins (HDL) (PubMed:6860692, PubMed:1911868). It also binds a wide range of cellular receptors including the LDL receptor/LDLR, the LDL receptor-related proteins LRP1, LRP2 and LRP8 and the very low-density lipoprotein receptor/VLDLR that mediate the cellular uptake of the APOE-containing lipoprotein particles (PubMed:2762297, PubMed:1917954, PubMed:7768901, PubMed:8939961, PubMed:12950167, PubMed:20030366, PubMed:2063194, PubMed:8756331, PubMed:20303980, PubMed:1530612, PubMed:7635945). Finally, APOE has also a heparin-binding activity and binds heparan- sulfate proteoglycans on the surface of cells, a property that supports the capture and the receptor-mediated uptake of APOE-containing lipoproteins by cells (PubMed:9395455, PubMed:9488694, PubMed:23676495, PubMed:7635945). A main function of APOE is to mediate lipoprotein clearance through the uptake of chylomicrons, VLDLs, and HDLs by hepatocytes (PubMed:1911868, PubMed:1917954, PubMed:9395455, PubMed:23676495, PubMed:29516132). APOE is also involved in the biosynthesis by the liver of VLDLs as well as their uptake by peripheral tissues ensuring the delivery of triglycerides and energy storage in muscle, heart and adipose tissues (PubMed:2762297, PubMed:29516132). By participating in the lipoprotein-mediated distribution of lipids among tissues, APOE plays a critical role in plasma and tissues lipid homeostasis (PubMed:2762297, PubMed:1917954, PubMed:29516132). APOE is also involved in two steps of reverse cholesterol transport, the HDLs-mediated transport of cholesterol from peripheral tissues to the liver, and thereby plays an important role in cholesterol homeostasis (PubMed:9395455, PubMed:14754908, PubMed:23620513). First, it is functionally associated with ABCA1 in the biogenesis of HDLs in tissues (PubMed:14754908, PubMed:23620513). Second, it is enriched in circulating HDLs and mediates their uptake by hepatocytes (PubMed:9395455). APOE also plays an important role in lipid transport in the central nervous system, regulating neuron survival and sprouting (PubMed:8939961, PubMed:25173806). APOE is also involved in innate and adaptive immune responses, controlling for instance the survival of myeloid-derived suppressor cells (By similarity). Binds to the immune cell receptor LILRB4 (PubMed:30333625). APOE may also play a role in transcription regulation through a receptor-dependent and cholesterol-independent mechanism, that activates MAP3K12 and a non-canonical MAPK signal transduction pathway that results in enhanced AP-1-mediated transcription of APP (PubMed:28111074). {ECO:0000250|UniProtKB:P08226, ECO:0000269|PubMed:12950167, ECO:0000269|PubMed:14754908, ECO:0000269|PubMed:1530612, ECO:0000269|PubMed:1911868, ECO:0000269|PubMed:1917954, ECO:0000269|PubMed:20030366, ECO:0000269|PubMed:20303980, ECO:0000269|PubMed:2063194, ECO:0000269|PubMed:23620513, ECO:0000269|PubMed:23676495, ECO:0000269|PubMed:2762297, ECO:0000269|PubMed:28111074, ECO:0000269|PubMed:30333625, ECO:0000269|PubMed:6860692, ECO:0000269|PubMed:7635945, ECO:0000269|PubMed:7768901, ECO:0000269|PubMed:8756331, ECO:0000269|PubMed:8939961, ECO:0000269|PubMed:9395455, ECO:0000269|PubMed:9488694, ECO:0000303|PubMed:25173806, ECO:0000303|PubMed:29516132}.&#39;,
+ &#39;(Microbial infection) Through its interaction with HCV envelope glycoprotein E2, participates in the attachment of HCV to HSPGs and other receptors (LDLr, VLDLr, and SR-B1) on the cell surface and to the assembly, maturation and infectivity of HCV viral particles (PubMed:25122793, PubMed:29695434). This interaction is probably promoted via the up-regulation of cellular autophagy by the virus (PubMed:29695434). {ECO:0000269|PubMed:25122793, ECO:0000269|PubMed:29695434}.&#39;]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;term&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;OpenTargets&quot;</span><span class="p">][</span><span class="s2">&quot;geneOntology&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0048156&#39;, &#39;name&#39;: &#39;tau protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0070328&#39;, &#39;name&#39;: &#39;triglyceride homeostasis&#39;},
+ {&#39;id&#39;: &#39;GO:1902430&#39;, &#39;name&#39;: &#39;negative regulation of amyloid-beta formation&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0043083&#39;, &#39;name&#39;: &#39;synaptic cleft&#39;},
+ {&#39;id&#39;: &#39;GO:0008203&#39;, &#39;name&#39;: &#39;cholesterol metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0042627&#39;, &#39;name&#39;: &#39;chylomicron&#39;},
+ {&#39;id&#39;: &#39;GO:0061771&#39;, &#39;name&#39;: &#39;response to caloric restriction&#39;},
+ {&#39;id&#39;: &#39;GO:0000302&#39;, &#39;name&#39;: &#39;response to reactive oxygen species&#39;},
+ {&#39;id&#39;: &#39;GO:0034447&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0034363&#39;, &#39;name&#39;: &#39;intermediate-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0034360&#39;, &#39;name&#39;: &#39;chylomicron remnant&#39;},
+ {&#39;id&#39;: &#39;GO:0008201&#39;, &#39;name&#39;: &#39;heparin binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005102&#39;, &#39;name&#39;: &#39;signaling receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0042803&#39;, &#39;name&#39;: &#39;protein homodimerization activity&#39;},
+ {&#39;id&#39;: &#39;GO:0005737&#39;, &#39;name&#39;: &#39;cytoplasm&#39;},
+ {&#39;id&#39;: &#39;GO:0005615&#39;, &#39;name&#39;: &#39;extracellular space&#39;},
+ {&#39;id&#39;: &#39;GO:0034380&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle assembly&#39;},
+ {&#39;id&#39;: &#39;GO:0007186&#39;, &#39;name&#39;: &#39;G protein-coupled receptor signaling pathway&#39;},
+ {&#39;id&#39;: &#39;GO:0071831&#39;,
+  &#39;name&#39;: &#39;intermediate-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0043083&#39;, &#39;name&#39;: &#39;synaptic cleft&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0010875&#39;, &#39;name&#39;: &#39;positive regulation of cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0033700&#39;, &#39;name&#39;: &#39;phospholipid efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0042470&#39;, &#39;name&#39;: &#39;melanosome&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0042803&#39;, &#39;name&#39;: &#39;protein homodimerization activity&#39;},
+ {&#39;id&#39;: &#39;GO:0055089&#39;, &#39;name&#39;: &#39;fatty acid homeostasis&#39;},
+ {&#39;id&#39;: &#39;GO:1905907&#39;,
+  &#39;name&#39;: &#39;negative regulation of amyloid fibril formation&#39;},
+ {&#39;id&#39;: &#39;GO:1900223&#39;, &#39;name&#39;: &#39;positive regulation of amyloid-beta clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0044877&#39;, &#39;name&#39;: &#39;protein-containing complex binding&#39;},
+ {&#39;id&#39;: &#39;GO:0010976&#39;,
+  &#39;name&#39;: &#39;positive regulation of neuron projection development&#39;},
+ {&#39;id&#39;: &#39;GO:0032438&#39;, &#39;name&#39;: &#39;melanosome organization&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0070374&#39;, &#39;name&#39;: &#39;positive regulation of ERK1 and ERK2 cascade&#39;},
+ {&#39;id&#39;: &#39;GO:1900272&#39;,
+  &#39;name&#39;: &#39;negative regulation of long-term synaptic potentiation&#39;},
+ {&#39;id&#39;: &#39;GO:0034362&#39;, &#39;name&#39;: &#39;low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0043083&#39;, &#39;name&#39;: &#39;synaptic cleft&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0006874&#39;, &#39;name&#39;: &#39;intracellular calcium ion homeostasis&#39;},
+ {&#39;id&#39;: &#39;GO:0010629&#39;, &#39;name&#39;: &#39;negative regulation of gene expression&#39;},
+ {&#39;id&#39;: &#39;GO:0061136&#39;,
+  &#39;name&#39;: &#39;regulation of proteasomal protein catabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:1905890&#39;,
+  &#39;name&#39;: &#39;regulation of cellular response to very-low-density lipoprotein particle stimulus&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034365&#39;, &#39;name&#39;: &#39;discoidal high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0045088&#39;, &#39;name&#39;: &#39;regulation of innate immune response&#39;},
+ {&#39;id&#39;: &#39;GO:0017038&#39;, &#39;name&#39;: &#39;protein import&#39;},
+ {&#39;id&#39;: &#39;GO:0051000&#39;,
+  &#39;name&#39;: &#39;positive regulation of nitric-oxide synthase activity&#39;},
+ {&#39;id&#39;: &#39;GO:0090090&#39;,
+  &#39;name&#39;: &#39;negative regulation of canonical Wnt signaling pathway&#39;},
+ {&#39;id&#39;: &#39;GO:0097113&#39;, &#39;name&#39;: &#39;AMPA glutamate receptor clustering&#39;},
+ {&#39;id&#39;: &#39;GO:0051044&#39;,
+  &#39;name&#39;: &#39;positive regulation of membrane protein ectodomain proteolysis&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005615&#39;, &#39;name&#39;: &#39;extracellular space&#39;},
+ {&#39;id&#39;: &#39;GO:0051044&#39;,
+  &#39;name&#39;: &#39;positive regulation of membrane protein ectodomain proteolysis&#39;},
+ {&#39;id&#39;: &#39;GO:0046889&#39;,
+  &#39;name&#39;: &#39;positive regulation of lipid biosynthetic process&#39;},
+ {&#39;id&#39;: &#39;GO:0042632&#39;, &#39;name&#39;: &#39;cholesterol homeostasis&#39;},
+ {&#39;id&#39;: &#39;GO:0030425&#39;, &#39;name&#39;: &#39;dendrite&#39;},
+ {&#39;id&#39;: &#39;GO:0005769&#39;, &#39;name&#39;: &#39;early endosome&#39;},
+ {&#39;id&#39;: &#39;GO:0010877&#39;, &#39;name&#39;: &#39;lipid transport involved in lipid storage&#39;},
+ {&#39;id&#39;: &#39;GO:0031175&#39;, &#39;name&#39;: &#39;neuron projection development&#39;},
+ {&#39;id&#39;: &#39;GO:0090090&#39;,
+  &#39;name&#39;: &#39;negative regulation of canonical Wnt signaling pathway&#39;},
+ {&#39;id&#39;: &#39;GO:0005886&#39;, &#39;name&#39;: &#39;plasma membrane&#39;},
+ {&#39;id&#39;: &#39;GO:0071813&#39;, &#39;name&#39;: &#39;lipoprotein particle binding&#39;},
+ {&#39;id&#39;: &#39;GO:0071830&#39;,
+  &#39;name&#39;: &#39;triglyceride-rich lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0051246&#39;, &#39;name&#39;: &#39;regulation of protein metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005783&#39;, &#39;name&#39;: &#39;endoplasmic reticulum&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0045541&#39;,
+  &#39;name&#39;: &#39;negative regulation of cholesterol biosynthetic process&#39;},
+ {&#39;id&#39;: &#39;GO:0098869&#39;, &#39;name&#39;: &#39;cellular oxidant detoxification&#39;},
+ {&#39;id&#39;: &#39;GO:0043524&#39;,
+  &#39;name&#39;: &#39;negative regulation of neuron apoptotic process&#39;},
+ {&#39;id&#39;: &#39;GO:0034362&#39;, &#39;name&#39;: &#39;low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0045807&#39;, &#39;name&#39;: &#39;positive regulation of endocytosis&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0030195&#39;, &#39;name&#39;: &#39;negative regulation of blood coagulation&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0043395&#39;, &#39;name&#39;: &#39;heparan sulfate proteoglycan binding&#39;},
+ {&#39;id&#39;: &#39;GO:0043083&#39;, &#39;name&#39;: &#39;synaptic cleft&#39;},
+ {&#39;id&#39;: &#39;GO:0070062&#39;, &#39;name&#39;: &#39;extracellular exosome&#39;},
+ {&#39;id&#39;: &#39;GO:0070062&#39;, &#39;name&#39;: &#39;extracellular exosome&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0042803&#39;, &#39;name&#39;: &#39;protein homodimerization activity&#39;},
+ {&#39;id&#39;: &#39;GO:0006707&#39;, &#39;name&#39;: &#39;cholesterol catabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0032805&#39;,
+  &#39;name&#39;: &#39;positive regulation of low-density lipoprotein particle receptor catabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0034362&#39;, &#39;name&#39;: &#39;low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0034374&#39;, &#39;name&#39;: &#39;low-density lipoprotein particle remodeling&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0043395&#39;, &#39;name&#39;: &#39;heparan sulfate proteoglycan binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005615&#39;, &#39;name&#39;: &#39;extracellular space&#39;},
+ {&#39;id&#39;: &#39;GO:0097114&#39;, &#39;name&#39;: &#39;NMDA glutamate receptor clustering&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0034363&#39;, &#39;name&#39;: &#39;intermediate-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0048662&#39;,
+  &#39;name&#39;: &#39;negative regulation of smooth muscle cell proliferation&#39;},
+ {&#39;id&#39;: &#39;GO:0005769&#39;, &#39;name&#39;: &#39;early endosome&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0042311&#39;, &#39;name&#39;: &#39;vasodilation&#39;},
+ {&#39;id&#39;: &#39;GO:0098978&#39;, &#39;name&#39;: &#39;glutamatergic synapse&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0034363&#39;, &#39;name&#39;: &#39;intermediate-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0120020&#39;, &#39;name&#39;: &#39;cholesterol transfer activity&#39;},
+ {&#39;id&#39;: &#39;GO:0070326&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0046907&#39;, &#39;name&#39;: &#39;intracellular transport&#39;},
+ {&#39;id&#39;: &#39;GO:0042632&#39;, &#39;name&#39;: &#39;cholesterol homeostasis&#39;},
+ {&#39;id&#39;: &#39;GO:0098978&#39;, &#39;name&#39;: &#39;glutamatergic synapse&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0090205&#39;,
+  &#39;name&#39;: &#39;positive regulation of cholesterol metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0006641&#39;, &#39;name&#39;: &#39;triglyceride metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0007271&#39;, &#39;name&#39;: &#39;synaptic transmission, cholinergic&#39;},
+ {&#39;id&#39;: &#39;GO:0010977&#39;,
+  &#39;name&#39;: &#39;negative regulation of neuron projection development&#39;},
+ {&#39;id&#39;: &#39;GO:0046911&#39;, &#39;name&#39;: &#39;metal chelating activity&#39;},
+ {&#39;id&#39;: &#39;GO:0010875&#39;, &#39;name&#39;: &#39;positive regulation of cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0005788&#39;, &#39;name&#39;: &#39;endoplasmic reticulum lumen&#39;},
+ {&#39;id&#39;: &#39;GO:0005737&#39;, &#39;name&#39;: &#39;cytoplasm&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0034447&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0072562&#39;, &#39;name&#39;: &#39;blood microparticle&#39;},
+ {&#39;id&#39;: &#39;GO:0034447&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0042159&#39;, &#39;name&#39;: &#39;lipoprotein catabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:1990777&#39;, &#39;name&#39;: &#39;lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:1905906&#39;, &#39;name&#39;: &#39;regulation of amyloid fibril formation&#39;},
+ {&#39;id&#39;: &#39;GO:0062023&#39;, &#39;name&#39;: &#39;collagen-containing extracellular matrix&#39;},
+ {&#39;id&#39;: &#39;GO:0005543&#39;, &#39;name&#39;: &#39;phospholipid binding&#39;},
+ {&#39;id&#39;: &#39;GO:0070326&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0043025&#39;, &#39;name&#39;: &#39;neuronal cell body&#39;},
+ {&#39;id&#39;: &#39;GO:0034382&#39;, &#39;name&#39;: &#39;chylomicron remnant clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0035641&#39;, &#39;name&#39;: &#39;locomotory exploration behavior&#39;},
+ {&#39;id&#39;: &#39;GO:0033344&#39;, &#39;name&#39;: &#39;cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0098978&#39;, &#39;name&#39;: &#39;glutamatergic synapse&#39;},
+ {&#39;id&#39;: &#39;GO:0005634&#39;, &#39;name&#39;: &#39;nucleus&#39;},
+ {&#39;id&#39;: &#39;GO:0005319&#39;, &#39;name&#39;: &#39;lipid transporter activity&#39;},
+ {&#39;id&#39;: &#39;GO:0044794&#39;, &#39;name&#39;: &#39;positive regulation by host of viral process&#39;},
+ {&#39;id&#39;: &#39;GO:0010596&#39;,
+  &#39;name&#39;: &#39;negative regulation of endothelial cell migration&#39;},
+ {&#39;id&#39;: &#39;GO:0007010&#39;, &#39;name&#39;: &#39;cytoskeleton organization&#39;},
+ {&#39;id&#39;: &#39;GO:0042802&#39;, &#39;name&#39;: &#39;identical protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0010875&#39;, &#39;name&#39;: &#39;positive regulation of cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0097487&#39;, &#39;name&#39;: &#39;multivesicular body, internal vesicle&#39;},
+ {&#39;id&#39;: &#39;GO:0034363&#39;, &#39;name&#39;: &#39;intermediate-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034447&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0120009&#39;, &#39;name&#39;: &#39;intermembrane lipid transfer&#39;},
+ {&#39;id&#39;: &#39;GO:0033344&#39;, &#39;name&#39;: &#39;cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0002021&#39;, &#39;name&#39;: &#39;response to dietary excess&#39;},
+ {&#39;id&#39;: &#39;GO:0043537&#39;,
+  &#39;name&#39;: &#39;negative regulation of blood vessel endothelial cell migration&#39;},
+ {&#39;id&#39;: &#39;GO:0034384&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0045893&#39;,
+  &#39;name&#39;: &#39;positive regulation of DNA-templated transcription&#39;},
+ {&#39;id&#39;: &#39;GO:0042158&#39;, &#39;name&#39;: &#39;lipoprotein biosynthetic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0046983&#39;, &#39;name&#39;: &#39;protein dimerization activity&#39;},
+ {&#39;id&#39;: &#39;GO:0008203&#39;, &#39;name&#39;: &#39;cholesterol metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:1902991&#39;,
+  &#39;name&#39;: &#39;regulation of amyloid precursor protein catabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0042982&#39;, &#39;name&#39;: &#39;amyloid precursor protein metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0043407&#39;, &#39;name&#39;: &#39;negative regulation of MAP kinase activity&#39;},
+ {&#39;id&#39;: &#39;GO:1905908&#39;,
+  &#39;name&#39;: &#39;positive regulation of amyloid fibril formation&#39;},
+ {&#39;id&#39;: &#39;GO:1903002&#39;,
+  &#39;name&#39;: &#39;positive regulation of lipid transport across blood-brain barrier&#39;},
+ {&#39;id&#39;: &#39;GO:0001937&#39;,
+  &#39;name&#39;: &#39;negative regulation of endothelial cell proliferation&#39;},
+ {&#39;id&#39;: &#39;GO:0048168&#39;, &#39;name&#39;: &#39;regulation of neuronal synaptic plasticity&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0010976&#39;,
+  &#39;name&#39;: &#39;positive regulation of neuron projection development&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0042627&#39;, &#39;name&#39;: &#39;chylomicron&#39;},
+ {&#39;id&#39;: &#39;GO:0006898&#39;, &#39;name&#39;: &#39;receptor-mediated endocytosis&#39;},
+ {&#39;id&#39;: &#39;GO:0050728&#39;, &#39;name&#39;: &#39;negative regulation of inflammatory response&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0045807&#39;, &#39;name&#39;: &#39;positive regulation of endocytosis&#39;},
+ {&#39;id&#39;: &#39;GO:0034382&#39;, &#39;name&#39;: &#39;chylomicron remnant clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0043691&#39;, &#39;name&#39;: &#39;reverse cholesterol transport&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0033344&#39;, &#39;name&#39;: &#39;cholesterol efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034372&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle remodeling&#39;},
+ {&#39;id&#39;: &#39;GO:0001540&#39;, &#39;name&#39;: &#39;amyloid-beta binding&#39;},
+ {&#39;id&#39;: &#39;GO:0042802&#39;, &#39;name&#39;: &#39;identical protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0007616&#39;, &#39;name&#39;: &#39;long-term memory&#39;},
+ {&#39;id&#39;: &#39;GO:1905908&#39;,
+  &#39;name&#39;: &#39;positive regulation of amyloid fibril formation&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:1902995&#39;, &#39;name&#39;: &#39;positive regulation of phospholipid efflux&#39;},
+ {&#39;id&#39;: &#39;GO:0016209&#39;, &#39;name&#39;: &#39;antioxidant activity&#39;},
+ {&#39;id&#39;: &#39;GO:0051248&#39;,
+  &#39;name&#39;: &#39;negative regulation of protein metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:2000822&#39;, &#39;name&#39;: &#39;regulation of behavioral fear response&#39;},
+ {&#39;id&#39;: &#39;GO:0050709&#39;, &#39;name&#39;: &#39;negative regulation of protein secretion&#39;},
+ {&#39;id&#39;: &#39;GO:0005615&#39;, &#39;name&#39;: &#39;extracellular space&#39;},
+ {&#39;id&#39;: &#39;GO:0034372&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle remodeling&#39;},
+ {&#39;id&#39;: &#39;GO:0032489&#39;,
+  &#39;name&#39;: &#39;regulation of Cdc42 protein signal transduction&#39;},
+ {&#39;id&#39;: &#39;GO:0010544&#39;, &#39;name&#39;: &#39;negative regulation of platelet activation&#39;},
+ {&#39;id&#39;: &#39;GO:0010467&#39;, &#39;name&#39;: &#39;gene expression&#39;},
+ {&#39;id&#39;: &#39;GO:0007263&#39;, &#39;name&#39;: &#39;nitric oxide mediated signal transduction&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0043254&#39;,
+  &#39;name&#39;: &#39;regulation of protein-containing complex assembly&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0019934&#39;, &#39;name&#39;: &#39;cGMP-mediated signaling&#39;},
+ {&#39;id&#39;: &#39;GO:0019899&#39;, &#39;name&#39;: &#39;enzyme binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034382&#39;, &#39;name&#39;: &#39;chylomicron remnant clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0062023&#39;, &#39;name&#39;: &#39;collagen-containing extracellular matrix&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0098978&#39;, &#39;name&#39;: &#39;glutamatergic synapse&#39;},
+ {&#39;id&#39;: &#39;GO:0090090&#39;,
+  &#39;name&#39;: &#39;negative regulation of canonical Wnt signaling pathway&#39;},
+ {&#39;id&#39;: &#39;GO:0070062&#39;, &#39;name&#39;: &#39;extracellular exosome&#39;},
+ {&#39;id&#39;: &#39;GO:0008289&#39;, &#39;name&#39;: &#39;lipid binding&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034375&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle remodeling&#39;},
+ {&#39;id&#39;: &#39;GO:1905920&#39;,
+  &#39;name&#39;: &#39;positive regulation of CoA-transferase activity&#39;},
+ {&#39;id&#39;: &#39;GO:0006641&#39;, &#39;name&#39;: &#39;triglyceride metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0005886&#39;, &#39;name&#39;: &#39;plasma membrane&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:0043395&#39;, &#39;name&#39;: &#39;heparan sulfate proteoglycan binding&#39;},
+ {&#39;id&#39;: &#39;GO:0030669&#39;, &#39;name&#39;: &#39;clathrin-coated endocytic vesicle membrane&#39;},
+ {&#39;id&#39;: &#39;GO:0005198&#39;, &#39;name&#39;: &#39;structural molecule activity&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0008201&#39;, &#39;name&#39;: &#39;heparin binding&#39;},
+ {&#39;id&#39;: &#39;GO:0070326&#39;,
+  &#39;name&#39;: &#39;very-low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0090181&#39;, &#39;name&#39;: &#39;regulation of cholesterol metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0070062&#39;, &#39;name&#39;: &#39;extracellular exosome&#39;},
+ {&#39;id&#39;: &#39;GO:0006898&#39;, &#39;name&#39;: &#39;receptor-mediated endocytosis&#39;},
+ {&#39;id&#39;: &#39;GO:0060999&#39;,
+  &#39;name&#39;: &#39;positive regulation of dendritic spine development&#39;},
+ {&#39;id&#39;: &#39;GO:0010976&#39;,
+  &#39;name&#39;: &#39;positive regulation of neuron projection development&#39;},
+ {&#39;id&#39;: &#39;GO:0090209&#39;,
+  &#39;name&#39;: &#39;negative regulation of triglyceride metabolic process&#39;},
+ {&#39;id&#39;: &#39;GO:0030516&#39;, &#39;name&#39;: &#39;regulation of axon extension&#39;},
+ {&#39;id&#39;: &#39;GO:0031012&#39;, &#39;name&#39;: &#39;extracellular matrix&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0051651&#39;, &#39;name&#39;: &#39;maintenance of location in cell&#39;},
+ {&#39;id&#39;: &#39;GO:0005769&#39;, &#39;name&#39;: &#39;early endosome&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0034364&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0050750&#39;,
+  &#39;name&#39;: &#39;low-density lipoprotein particle receptor binding&#39;},
+ {&#39;id&#39;: &#39;GO:0015909&#39;, &#39;name&#39;: &#39;long-chain fatty acid transport&#39;},
+ {&#39;id&#39;: &#39;GO:1902952&#39;,
+  &#39;name&#39;: &#39;positive regulation of dendritic spine maintenance&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:1900221&#39;, &#39;name&#39;: &#39;regulation of amyloid-beta clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0071682&#39;, &#39;name&#39;: &#39;endocytic vesicle lumen&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:1905860&#39;,
+  &#39;name&#39;: &#39;positive regulation of heparan sulfate proteoglycan binding&#39;},
+ {&#39;id&#39;: &#39;GO:1903561&#39;, &#39;name&#39;: &#39;extracellular vesicle&#39;},
+ {&#39;id&#39;: &#39;GO:0034361&#39;, &#39;name&#39;: &#39;very-low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0019068&#39;, &#39;name&#39;: &#39;virion assembly&#39;},
+ {&#39;id&#39;: &#39;GO:0060228&#39;,
+  &#39;name&#39;: &#39;phosphatidylcholine-sterol O-acyltransferase activator activity&#39;},
+ {&#39;id&#39;: &#39;GO:0034362&#39;, &#39;name&#39;: &#39;low-density lipoprotein particle&#39;},
+ {&#39;id&#39;: &#39;GO:0016020&#39;, &#39;name&#39;: &#39;membrane&#39;},
+ {&#39;id&#39;: &#39;GO:0034380&#39;, &#39;name&#39;: &#39;high-density lipoprotein particle assembly&#39;},
+ {&#39;id&#39;: &#39;GO:0005515&#39;, &#39;name&#39;: &#39;protein binding&#39;},
+ {&#39;id&#39;: &#39;GO:0005576&#39;, &#39;name&#39;: &#39;extracellular region&#39;},
+ {&#39;id&#39;: &#39;GO:1900221&#39;, &#39;name&#39;: &#39;regulation of amyloid-beta clearance&#39;},
+ {&#39;id&#39;: &#39;GO:0005794&#39;, &#39;name&#39;: &#39;Golgi apparatus&#39;},
+ {&#39;id&#39;: &#39;GO:0048844&#39;, &#39;name&#39;: &#39;artery morphogenesis&#39;},
+ {&#39;id&#39;: &#39;GO:0034363&#39;, &#39;name&#39;: &#39;intermediate-density lipoprotein particle&#39;}]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;OpenTargets&quot;</span><span class="p">][</span><span class="s2">&quot;pathways&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;pathway&#39;: &#39;Nuclear signaling by ERBB4&#39;,
+  &#39;topLevelTerm&#39;: &#39;Signal Transduction&#39;},
+ {&#39;pathway&#39;: &#39;Retinoid metabolism and transport&#39;,
+  &#39;topLevelTerm&#39;: &#39;Metabolism&#39;},
+ {&#39;pathway&#39;: &#39;Chylomicron clearance&#39;,
+  &#39;topLevelTerm&#39;: &#39;Transport of small molecules&#39;},
+ {&#39;pathway&#39;: &#39;Scavenging by Class A Receptors&#39;,
+  &#39;topLevelTerm&#39;: &#39;Vesicle-mediated transport&#39;},
+ {&#39;pathway&#39;: &#39;Chylomicron assembly&#39;,
+  &#39;topLevelTerm&#39;: &#39;Transport of small molecules&#39;},
+ {&#39;pathway&#39;: &#39;Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)&#39;,
+  &#39;topLevelTerm&#39;: &#39;Metabolism of proteins&#39;},
+ {&#39;pathway&#39;: &#39;Post-translational protein phosphorylation&#39;,
+  &#39;topLevelTerm&#39;: &#39;Metabolism of proteins&#39;},
+ {&#39;pathway&#39;: &#39;HDL remodeling&#39;, &#39;topLevelTerm&#39;: &#39;Transport of small molecules&#39;},
+ {&#39;pathway&#39;: &#39;Amyloid fiber formation&#39;,
+  &#39;topLevelTerm&#39;: &#39;Metabolism of proteins&#39;},
+ {&#39;pathway&#39;: &#39;Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors&#39;,
+  &#39;topLevelTerm&#39;: &#39;Gene expression (Transcription)&#39;},
+ {&#39;pathway&#39;: &#39;NR1H3 &amp; NR1H2 regulate gene expression linked to cholesterol transport and efflux&#39;,
+  &#39;topLevelTerm&#39;: &#39;Signal Transduction&#39;},
+ {&#39;pathway&#39;: &#39;Chylomicron remodeling&#39;,
+  &#39;topLevelTerm&#39;: &#39;Transport of small molecules&#39;}]
+</pre></div></div>
+</div>
+</section>
+<section id="Here-we-show-a-single-evidence-for-ENSG00000130203-and-MONDO_0004975">
+<h3>Here we show a single evidence for ENSG00000130203 and MONDO_0004975<a class="headerlink" href="#Here-we-show-a-single-evidence-for-ENSG00000130203-and-MONDO_0004975" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;OpenTargets_disease_evidence&quot;</span><span class="p">][</span><span class="s2">&quot;evidences&quot;</span><span class="p">][</span><span class="s2">&quot;rows&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;disease&#39;: {&#39;id&#39;: &#39;MONDO_0004975&#39;, &#39;name&#39;: &#39;Alzheimer disease&#39;},
+ &#39;target&#39;: {&#39;id&#39;: &#39;ENSG00000130203&#39;, &#39;approvedSymbol&#39;: &#39;APOE&#39;},
+ &#39;urls&#39;: None,
+ &#39;diseaseFromSource&#39;: None,
+ &#39;literature&#39;: [&#39;36153580&#39;],
+ &#39;publicationYear&#39;: 2022,
+ &#39;datasourceId&#39;: &#39;europepmc&#39;,
+ &#39;datatypeId&#39;: &#39;literature&#39;,
+ &#39;score&#39;: 1,
+ &#39;resourceScore&#39;: 142,
+ &#39;textMiningSentences&#39;: [{&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In addition to its association with an increased risk of AD, we have previously addressed in this review that APOE4 is also an outstanding genetic risk factor for LBD [680].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Nonetheless, the precise mechanisms by which the APOE genotype and diabetes contribute to AD risk are still undetermined.&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;APOE4 exacerbates Aβ aggregation, tau pathology, neuroinflammation, and neurodegeneration [39], but the mechanisms through which APOE4 exerts its detrimental effects in AD pathology are still under study.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Hence, these findings could be related to the higher incidence of AD in women and the link between low plasma apoE levels and an increased risk of suffering dementia [208].&#39;},
+  {&#39;section&#39;: &#39;concl&#39;,
+   &#39;text&#39;: &#39;The APOE genotype dramatically influences many aspects of cell function in the CNS and impacts the progression of AD and other CNS diseases characterized by overt inflammation.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;APOE4 is among the LOAD risk genes related to synaptic function impairments in AD [441].&#39;},
+  {&#39;section&#39;: &#39;title&#39;,
+   &#39;text&#39;: &#39;APOE in the bullseye of neurodegenerative diseases: impact of the APOE genotype in Alzheimer’s disease pathology and brain diseases&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A case–control study comparing the age-specific association between the APOE genotype and AD in the CSF of more than a thousand AD cases reported that the highest impact of APOE4 on AD risk was between the ages of 65 and 70 [523].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Furthermore, the presence of apoE4 negatively affects cognitive performance in PD patients and increases the risk of dementia in pure synucleinopathies (with limited AD co-pathology) [666, 681].&#39;},
+  {&#39;section&#39;: &#39;concl&#39;,
+   &#39;text&#39;: &#39;Therefore, the implications of the APOE genotype in inflammatory eye-related diseases and their connection to the development of Alzheimer’s disease are highly relevant.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Initial histopathological evidence established a relation between apoE protein and NFTs in AD brains [382–384].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Two additional studies recently showed implications of apoE4 in synucleinopathies not related to AD [677, 678].&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;Thus, this review aims to extensively describe the influence of APOE and its polymorphisms in different factors influencing AD, bringing special attention to the latest advances in the AD field regarding APOE’s influence in glial activity, synaptic function, cellular processes such as autophagy, and signaling cascades.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Nonetheless, neither the total CSF apoE concentration nor its isoforms were related to Aβ status nor the degree of dementia of the AD patients, in agreement with prior studies [199, 200, 202].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The most crucial process of APOE related to amyloid pathology remains unclear, and additional studies are required to increase the knowledge about the effect of APOE and amyloid pathology in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The lipidation status of apoE, especially reduction of apoE lipidation by depleting ABCA1, contributes to increased amyloid deposition in AD transgenic mice [353, 354].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Notably, whereas CSF apoE levels did not appear to be affected by the APOE genotype or AD diagnosis, some studies suggest that amyloidosis is associated with reduced CSF apoE levels in an APOE4 genotype-dependent manner [199–201].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;For instance, a study comparing apoE particle size from temporal lobe brain homogenates of AD and control patients by size-exclusion chromatography found that apoE particles in APOE4/4 patients were twice as big as those from APOE3/3 AD patients and APOE3/3 control subjects [125].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A case–control study comparing the age-specific association between the APOE genotype and AD in the CSF of more than a thousand AD cases reported that the highest impact of APOE4 on AD risk was between the ages of 65 and 70 [523].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Connecting APOE with other non-genetic AD-associated risk factors&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#34;There are three major human polymorphisms, apoE2, apoE3, and apoE4, and the genetic expression of APOE4 is one of the most influential risk factors for the development of late-onset Alzheimer&#39;s disease (AD).&#34;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In that context, it is intriguing whether or not the APOE genotype impacts the association between a physically active lifestyle and the development of dementia, particularly in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Throughout different studies, APOE4 carriers display a robust amnestic phenotype with a more severe and typical medial and temporal spread of tau, following the stereotypical Braak staging system characterized in AD [387–390].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The implications of APOE4 in synucleinopathies are still poorly understood, but recent studies suggest that the APOE gene regulates α-syn brain pathology independently of its effects on AD-related Aβ and tau pathology and that specifically APOE4 exacerbates α-syn pathology [683, 684].&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#39;We discuss influential factors affecting AD pathology combined with the APOE genotype, such as sex, age, diet, physical exercise, current therapies and clinical trials in the AD field.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Thus, due to the critical impact of lipidation on apoE’s physiological and pathological roles, increasing apoE lipidation has been proposed as a target for AD treatment [114].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Immunotherapy against AD opens another attractive therapeutic alternative, the use of anti-apoE antibodies.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Previously, Zhu and colleagues noticed an apoE4-specific increase in the expression of synaptojanin 1 (SYNJ1), a phospholipid regulator which, when induced, caused an increased Aβ clearance and reduced synaptic damage in an AD mice model [490, 491].&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#34;This review reflects on how APOE&#39;s polymorphisms impact critical aspects of AD pathology, such as the neuroinflammatory response, particularly the effect of APOE on astrocytic and microglial function and microglial dynamics, synaptic function, amyloid-β load, tau pathology, autophagy, and cell–cell communication.&#34;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#34;There are three major human polymorphisms, apoE2, apoE3, and apoE4, and the genetic expression of APOE4 is one of the most influential risk factors for the development of late-onset Alzheimer&#39;s disease (AD).&#34;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;It has been proposed a link between APOE4 polymorphism and an increase of white matter hyperintensity lesioned areas observed by MRI in AD patients [313, 314].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Current AD therapies and clinical trials. Targeting APOE4&#39;},
+  {&#39;section&#39;: &#39;title&#39;,
+   &#39;text&#39;: &#39;APOE in the bullseye of neurodegenerative diseases: impact of the APOE genotype in Alzheimer’s disease pathology and brain diseases&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#34;There are three major human polymorphisms, apoE2, apoE3, and apoE4, and the genetic expression of APOE4 is one of the most influential risk factors for the development of late-onset Alzheimer&#39;s disease (AD).&#34;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Regarding ApoE’s interaction with TLRs, it has been described a deleterious effect of the APOE4 genotype in AD through the TLR4-dependent pathway [269], and apoE3 can inhibit macrophage activation driven by TLR4 [280], TLRs recruit TIR domain-containing adaptor proteins such as MyD88, TRIF, TIRAP/TRAM, or TRAM, leading to activation of different signal transduction pathways, including NF-κB and MAP kinases and hence inducing inflammatory cytokine gene expression [281].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;These disparities justified using the human APOE gene sequence in transgenic pre-clinical AD models.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Nevertheless, the specific mechanism by which APOE4 alters autophagy is not yet fully understood, although several publications support that it is one of the main pathological processes regulated by APOE4 in AD (see review [485]).&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In addition to those mentioned above, two Phase 1 ongoing clinical trials show novel APOE4 therapeutic approaches in patients with AD or MCI (NCT03887741 and NCT03634007).&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Intriguingly, APOE4 has also been associated with higher levels of CSF α-syn in patients in the AD continuum where patients with mild cognitive impairment (MCI) who, after 24 months follow-up fulfilled the clinical criteria for an AD diagnosis, exhibited higher CSF α-syn levels in an APOE4 dose-dependent manner [685].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In this section, we are exploring the importance of the APOE genotype in neurodegenerative diseases other than AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;They also revealed ARMs as the meeting point for aging processes, sex, and AD risk factors because ARM response was abolished with APOE deletion.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A recent publication from Berger and colleagues evaluated the proteomic changes in the CSF of AD Neuroimaging Initiative (ADNI) samples by applying linear regression models adjusted by age, sex, APOE4 copy number, and linear models to adjust by AD clinical status or CSF levels of Aβ or tau.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;For instance, a study comparing apoE particle size from temporal lobe brain homogenates of AD and control patients by size-exclusion chromatography found that apoE particles in APOE4/4 patients were twice as big as those from APOE3/3 AD patients and APOE3/3 control subjects [125].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Further studies taking into account the cellular sexual dimorphism will be of great value to further unravel the interaction between sex and the APOE genotype in neurodegenerative diseases, particularly in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Thus, due to the critical impact of lipidation on apoE’s physiological and pathological roles, increasing apoE lipidation has been proposed as a target for AD treatment [114].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Zhu and colleagues observed an exacerbated reduction in PIP2 in APOE4 carriers’ brains compared to APOE3. Decreased levels of PIP2 were associated with an increase in Synj1 [491], a PIP2-degrading enzyme [507] significantly upregulated in AD brains [508] and associated with reduced internalization and degradation of Aβ [509].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The APOE4 genotype is associated with lower C-reactive protein levels, which in turn, correlates with greater APOE-related AD risk [526].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The knowledge about APOE’s role in AD has increased significantly in recent years.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;ApoE co-localizes with synaptic markers in both healthy controls and AD subjects, pointing towards a not purely pathological role of apoE at synaptic terminals.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Multiple studies have focused on the impact of protein glycosylation in AD pathogenesis [87–89], apoE produced by astrocytes is more heavily sialylated and glycosylated, and some studies suggest the existence of tissue-specific apoE glycoforms [79, 90].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The lipidation status of apoE, especially reduction of apoE lipidation by depleting ABCA1, contributes to increased amyloid deposition in AD transgenic mice [353, 354].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;It is also relevant to note that human and m-apoE differ in functionality in most AD processes, such as Aβ clearance, neuroinflammation, and synaptic integrity [66–68].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Increased insight in this area could potentially open up new treatment strategies combining exercise interventions with future pharmacological therapies to target specific neuroinflammatory pathological events early in AD patients depending on APOE genotype.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The study by Dickson and colleagues, including more than 600 hundred PDD and LBD post-mortem samples, showed that severity of LB pathology was associated with APOE4 variant independently of the severity of concomitant AD, yet, the analysis only included cortical regions [676].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;This study offers a new potential therapeutic approach to the regulation of apoE4 and its effect on autophagy in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In terms of brain imaging evidence, studies using the tau PET tracer 18F-AV-1451, also known as 18F-flortaucipir, showed contradictory results, ranging from an association between medial temporal tau and apoE4 independently of Aβ in cognitive performance [407]; to establishing no association between medial temporal tau and apoE4 in cognitively normal individuals, mild cognitive impairment (MCI) or AD patients [408, 409].&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#39;Therefore, this review gathers the most relevant findings related to the APOE genotype up to date and its implications on AD and CNS pathologies to provide a deeper understanding of the knowledge in the APOE field.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A complete lack of APOE expression in AD transgenic mice overexpressing human mutant APP, but not PSEN1, dramatically reduces deposition of Aβ in the brain and lowers both Aβ40 and Aβ42 deposits, highlighting the important role of human APOE in amyloid deposition [341–343].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Likewise, it was recently confirmed the sex-specificity between AD biomarkers and CSF apoE, where baseline CSF apoE levels in women were significantly associated with Aβ and tau levels [417], which does not entirely align with results from previous studies [546, 547].&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;The detrimental effects of APOE on AD pathology have been linked to its immunomodulatory functions [36].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Altogether, different studies established a clear link between autophagy and APOE4, which may be one of the main cellular processes underlying the detrimental effect of APOE4 in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The apoE-cholesterol pathway differentially affects both AD and Lewy Body dementia (LBD), and the relevance of cholesterol in Lewy Body pathology has been recently reviewed [656–658].&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;APOE’s role in increasing AD risk is complex and multifactorial.&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#39;We discuss influential factors affecting AD pathology combined with the APOE genotype, such as sex, age, diet, physical exercise, current therapies and clinical trials in the AD field.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Nevertheless, the specific mechanism by which APOE4 alters autophagy is not yet fully understood, although several publications support that it is one of the main pathological processes regulated by APOE4 in AD (see review [485]).&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;APOE4 is closely related to synaptic degeneration, as observed from studies with cerebral organoids from AD patients carrying APOE4, in which APOE4 carriers presented higher levels of cellular apoptosis and decreased synaptic integrity [184].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;For instance, a study comparing apoE particle size from temporal lobe brain homogenates of AD and control patients by size-exclusion chromatography found that apoE particles in APOE4/4 patients were twice as big as those from APOE3/3 AD patients and APOE3/3 control subjects [125].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A recent publication from Berger and colleagues evaluated the proteomic changes in the CSF of AD Neuroimaging Initiative (ADNI) samples by applying linear regression models adjusted by age, sex, APOE4 copy number, and linear models to adjust by AD clinical status or CSF levels of Aβ or tau.&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;Thus, this review aims to extensively describe the influence of APOE and its polymorphisms in different factors influencing AD, bringing special attention to the latest advances in the AD field regarding APOE’s influence in glial activity, synaptic function, cellular processes such as autophagy, and signaling cascades.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;ApoE co-deposits within amyloid plaques [355] and the form of apoE localizing to insoluble Aβ deposits in AD appears to be poorly lipidated [354].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Notably, whereas CSF apoE levels did not appear to be affected by the APOE genotype or AD diagnosis, some studies suggest that amyloidosis is associated with reduced CSF apoE levels in an APOE4 genotype-dependent manner [199–201].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In sum, APOE4 has been highly associated with changes in amyloid pathology in AD.&#39;},
+  {&#39;section&#39;: &#39;concl&#39;,
+   &#39;text&#39;: &#39;For instance, the APOE Jacksonville mutation (V236E), characterized by a mutation in the lipid-binding region, was reported to reduce Aβ aggregation in 5xFAD mice and manifested the relevance of lipid metabolism during AD [78].&#39;},
+  {&#39;section&#39;: &#39;other&#39;, &#39;text&#39;: &#39;APOE in Alzheimer’s disease&#39;},
+  {&#39;section&#39;: &#39;abstract&#39;,
+   &#39;text&#39;: &#34;There are three major human polymorphisms, apoE2, apoE3, and apoE4, and the genetic expression of APOE4 is one of the most influential risk factors for the development of late-onset Alzheimer&#39;s disease (AD).&#34;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Thus, future studies evaluating the impact of diet and the APOE genotype in AD pathology will be of great value.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The authors observed that increasing APOE4 copy number was related to decreased CSF levels of C-reactive protein (a classical inflammatory marker), which correlated with cognitive impairment and AD progression [203, 204].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Altogether, different studies established a clear link between autophagy and APOE4, which may be one of the main cellular processes underlying the detrimental effect of APOE4 in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In addition, apoE/Aβ complexes accumulate in human cortical synaptic terminals, especially during AD, and their expression increases in the presence of apoE4, compared to brains from non-APOE4 carriers [461].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In terms of brain imaging evidence, studies using the tau PET tracer 18F-AV-1451, also known as 18F-flortaucipir, showed contradictory results, ranging from an association between medial temporal tau and apoE4 independently of Aβ in cognitive performance [407]; to establishing no association between medial temporal tau and apoE4 in cognitively normal individuals, mild cognitive impairment (MCI) or AD patients [408, 409].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Even though apoE4 receptors VLDLR and apoER2 activate PI3K/AKT/mTORC1 [499, 500], Yates and colleagues observed that the alteration in the mTORC1 pathway was independent of apoE status in brains of AD-patients [501].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The implications of APOE4 in synucleinopathies are still poorly understood, but recent studies suggest that the APOE gene regulates α-syn brain pathology independently of its effects on AD-related Aβ and tau pathology and that specifically APOE4 exacerbates α-syn pathology [683, 684].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Related to this, Hayden Y. and colleagues aimed to better characterize the interaction between white matter ischemic lesions, the APOE4 genotype, and amyloid pathology in AD using E4FAD mice subjected to a subcortical ischemic stroke.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;ApoE co-deposits within amyloid plaques [355] and the form of apoE localizing to insoluble Aβ deposits in AD appears to be poorly lipidated [354].&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;However, the implications of APOE are not limited to AD.&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;Advances in single-cell analysis, transcriptomics, and metabolomic studies have shed some light on the effect of APOE upon multiple aspects of AD pathology.&#39;},
+  {&#39;section&#39;: &#39;other&#39;, &#39;text&#39;: &#39;APOE and synaptic function in AD&#39;},
+  {&#39;section&#39;: &#39;intro&#39;,
+   &#39;text&#39;: &#39;APOE4 exacerbates Aβ aggregation, tau pathology, neuroinflammation, and neurodegeneration [39], but the mechanisms through which APOE4 exerts its detrimental effects in AD pathology are still under study.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The strongest effect with age on amyloid burden and Aβ42 CSF levels was seen in APOE4 homozygotes, suggesting a dose-dependent APOE4 effect on amyloid plaque burden prior to clinical AD onset [346].&#39;},
+  {&#39;section&#39;: &#39;other&#39;, &#39;text&#39;: &#39;APOE, amyloid-β load and AD pathology&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Regarding ApoE’s interaction with TLRs, it has been described a deleterious effect of the APOE4 genotype in AD through the TLR4-dependent pathway [269], and apoE3 can inhibit macrophage activation driven by TLR4 [280], TLRs recruit TIR domain-containing adaptor proteins such as MyD88, TRIF, TIRAP/TRAM, or TRAM, leading to activation of different signal transduction pathways, including NF-κB and MAP kinases and hence inducing inflammatory cytokine gene expression [281].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Nonetheless, APOE deletion in a more aggressive AD mouse model containing mutations in both APP and PSEN1, such as APP/PS1 mice, induces an overall increase in plaque size [236].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In line with these observations, reduced apoE in amyloid plaques was found in the brains of AD patients carrying different TREM loss-of-function variants [274].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A case–control study comparing the age-specific association between the APOE genotype and AD in the CSF of more than a thousand AD cases reported that the highest impact of APOE4 on AD risk was between the ages of 65 and 70 [523].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Therefore, a better understanding of the mechanisms involving TBI and APOE could be of great interest to discover possible disease-modifying biomarkers to halt AD progression.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The most crucial process of APOE related to amyloid pathology remains unclear, and additional studies are required to increase the knowledge about the effect of APOE and amyloid pathology in AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Intriguingly, APOE4 has also been associated with higher levels of CSF α-syn in patients in the AD continuum where patients with mild cognitive impairment (MCI) who, after 24 months follow-up fulfilled the clinical criteria for an AD diagnosis, exhibited higher CSF α-syn levels in an APOE4 dose-dependent manner [685].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Regarding the risk of getting diagnosed with AD, some studies show that the lower risk of developing all-cause dementia and AD among highly active persons is more pronounced in APOE4 non-carriers [586, 587, 607, 608].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;For instance, a study comparing apoE particle size from temporal lobe brain homogenates of AD and control patients by size-exclusion chromatography found that apoE particles in APOE4/4 patients were twice as big as those from APOE3/3 AD patients and APOE3/3 control subjects [125].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The authors also observed an increase in the hippocampal synaptic levels of the marker CD47, apoE, and a possible link between low apoE levels in pre-synaptic events and AD resilience [463].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Human studies have identified low plasma apoE values as a significant risk factor for AD and other types of dementia [209].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In the context of AD, it is difficult to isolate a direct connection between apoE and tau due to the effect of Aβ, and it is argued that the effect of the APOE4 allele on tau pathology may be secondary to the marked effect of the APOE genotype on Aβ burden.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Female sex, together with advanced age and the expression of APOE4 genotype, constitutes one of the most relevant risk factors for the development of AD.&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Even though apoE4 receptors VLDLR and apoER2 activate PI3K/AKT/mTORC1 [499, 500], Yates and colleagues observed that the alteration in the mTORC1 pathway was independent of apoE status in brains of AD-patients [501].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;Besides parenchymal amyloid plaque deposition, APOE4 has also been linked to cerebral amyloid angiopathy (CAA) formation in an AD transgenic mouse model (Tg2576) cross-bred with humanized APOE-knock in mice [344].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;In AD mouse models, WAMs signature is APOE-dependent, whereas in aged brains, WAMs show an APOE-independent signature [311].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;A case–control study comparing the age-specific association between the APOE genotype and AD in the CSF of more than a thousand AD cases reported that the highest impact of APOE4 on AD risk was between the ages of 65 and 70 [523].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The study by Cruchaga and colleagues examined the correlation between CSF and plasma apoE levels in 641 AD patients and controls, in which they found a very low correlation [205].&#39;},
+  {&#39;section&#39;: &#39;concl&#39;,
+   &#39;text&#39;: &#39;However, it was recently reported that low presynaptic apoE levels could be related to AD resilience [463].&#39;},
+  {&#39;section&#39;: &#39;other&#39;,
+   &#39;text&#39;: &#39;The authors also observed an increase in the hippocampal synaptic levels of the marker CD47, apoE, and a possible link between low apoE levels in pre-synaptic events and AD resilience [463].&#39;}],
+ &#39;significantDriverMethods&#39;: None,
+ &#39;cohortId&#39;: None,
+ &#39;cohortShortName&#39;: None,
+ &#39;cohortDescription&#39;: None,
+ &#39;mutatedSamples&#39;: None}
+</pre></div></div>
+</div>
+</section>
+<section id="Fields-retrieved-from-Pharos-for-each-target">
+<h3>Fields retrieved from Pharos for each target<a class="headerlink" href="#Fields-retrieved-from-Pharos-for-each-target" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;name&#39;, &#39;preferredSymbol&#39;, &#39;tdl&#39;, &#39;fam&#39;, &#39;sym&#39;, &#39;description&#39;, &#39;novelty&#39;, &#39;pantherClasses&#39;, &#39;dto&#39;, &#39;gwas&#39;, &#39;gwasAnalytics&#39;, &#39;pathways&#39;, &#39;diseaseCounts&#39;, &#39;diseases&#39;, &#39;tissueSpecificity&#39;, &#39;gtex&#39;, &#39;ppis&#39;, &#39;tinx&#39;])
+</pre></div></div>
+</div>
+</section>
+<section id="Examples-of-Pharos-fields">
+<h3>Examples of Pharos fields<a class="headerlink" href="#Examples-of-Pharos-fields" title="Link to this heading">#</a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;tdl&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Tbio&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Apolipoprotein E&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;pantherClasses&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;dto&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;description&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;The protein encoded by this gene is a major apoprotein of the chylomicron. It binds to a specific liver and peripheral cell receptor, and is essential for the normal catabolism of triglyceride-rich lipoprotein constituents. This gene maps to chromosome 19 in a cluster with the related apolipoprotein C1 and C2 genes. Mutations in this gene result in familial dysbetalipoproteinemia, or type III hyperlipoproteinemia (HLP III), in which increased plasma cholesterol and triglycerides are the consequence of impaired clearance of chylomicron and VLDL remnants. [provided by RefSeq, Jun 2016]&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;pathways&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;name&#39;: &#39;Alzheimer disease&#39;,
+  &#39;pwid&#39;: 12959,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 66},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 57},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 41},
+   {&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 7}],
+  &#39;type&#39;: &#39;KEGG&#39;},
+ {&#39;name&#39;: &#39;Cholesterol metabolism&#39;,
+  &#39;pwid&#39;: 23630,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 27},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 20},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 4}],
+  &#39;type&#39;: &#39;KEGG&#39;},
+ {&#39;name&#39;: &#39;Binding and Uptake of Ligands by Scavenger Receptors&#39;,
+  &#39;pwid&#39;: 65693,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 71},
+   {&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 37},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 7},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 1}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;Chylomicron assembly&#39;,
+  &#39;pwid&#39;: 72303,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 6},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 2},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 2}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;Chylomicron clearance&#39;,
+  &#39;pwid&#39;: 72308,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 3},
+   {&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 2}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;Chylomicron remodeling&#39;,
+  &#39;pwid&#39;: 72319,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 7},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 2},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 1}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;G alpha (i) signalling events&#39;,
+  &#39;pwid&#39;: 89069,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 193},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 146},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 61},
+   {&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 8}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;GPCR downstream signalling&#39;,
+  &#39;pwid&#39;: 91504,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 423},
+   {&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 350},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 237},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 142}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;Gene expression (Transcription)&#39;,
+  &#39;pwid&#39;: 93679,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 876},
+   {&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 283},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 223},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 70}],
+  &#39;type&#39;: &#39;Reactome&#39;},
+ {&#39;name&#39;: &#39;Generic Transcription Pathway&#39;,
+  &#39;pwid&#39;: 95177,
+  &#39;targetCounts&#39;: [{&#39;name&#39;: &#39;Tbio&#39;, &#39;value&#39;: 651},
+   {&#39;name&#39;: &#39;Tdark&#39;, &#39;value&#39;: 268},
+   {&#39;name&#39;: &#39;Tchem&#39;, &#39;value&#39;: 208},
+   {&#39;name&#39;: &#39;Tclin&#39;, &#39;value&#39;: 68}],
+  &#39;type&#39;: &#39;Reactome&#39;}]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;ppis&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;nid&#39;: 9688518,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tdark&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.91681036&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999998892&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000001108&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex&#39;}],
+  &#39;type&#39;: &#39;BioPlex&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;MANSC1&#39;}},
+ {&#39;nid&#39;: 9687076,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tbio&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.01080446&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999998035&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000001965&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex&#39;}],
+  &#39;type&#39;: &#39;BioPlex&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;HLA-DPA1&#39;}},
+ {&#39;nid&#39;: 9688420,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tbio&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.03378128&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999960004&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000039913&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;8.2e-8&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.2&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;MMRN1&#39;}},
+ {&#39;nid&#39;: 9687555,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tbio&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.0011441&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999949506&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000050386&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;1.08e-7&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.694&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;VDAC1&#39;}},
+ {&#39;nid&#39;: 9689642,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tchem&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.00041675&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999922274&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000077208&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;5.18e-7&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.821&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;MMP3&#39;}},
+ {&#39;nid&#39;: 9687277,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tdark&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;3.33740474&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999920991&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000079008&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;1e-9&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex&#39;}],
+  &#39;type&#39;: &#39;BioPlex&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;C16orf92&#39;}},
+ {&#39;nid&#39;: 9686873,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tchem&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.00749298&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999854944&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000144993&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;6.3e-8&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.401&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;C9&#39;}},
+ {&#39;nid&#39;: 9689257,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tbio&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.0015496&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999179357&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000811847&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;0.000008796&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.993&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,Reactome,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,Reactome,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;APOC2&#39;}},
+ {&#39;nid&#39;: 9687562,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tbio&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.0095068&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.999125127&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.000874846&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;2.7e-8&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.225&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;VDAC3&#39;}},
+ {&#39;nid&#39;: 9688410,
+  &#39;props&#39;: [{&#39;name&#39;: &#39;tdl&#39;, &#39;value&#39;: &#39;Tchem&#39;},
+   {&#39;name&#39;: &#39;Novelty&#39;, &#39;value&#39;: &#39;0.00112113&#39;},
+   {&#39;name&#39;: &#39;p_int&#39;, &#39;value&#39;: &#39;0.997865595&#39;},
+   {&#39;name&#39;: &#39;p_ni&#39;, &#39;value&#39;: &#39;0.002132562&#39;},
+   {&#39;name&#39;: &#39;p_wrong&#39;, &#39;value&#39;: &#39;0.000001842&#39;},
+   {&#39;name&#39;: &#39;Score&#39;, &#39;value&#39;: &#39;0.694&#39;},
+   {&#39;name&#39;: &#39;Data Source&#39;, &#39;value&#39;: &#39;BioPlex,STRINGDB&#39;}],
+  &#39;type&#39;: &#39;BioPlex,STRINGDB&#39;,
+  &#39;target&#39;: {&#39;preferredSymbol&#39;: &#39;MMP10&#39;}}]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;tissueSpecificity&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;name&#39;: &#39;HPA Protein Tissue Specificity Index&#39;, &#39;value&#39;: 0.826923},
+ {&#39;name&#39;: &#39;HPA RNA Tissue Specificity Index&#39;, &#39;value&#39;: 0.836079},
+ {&#39;name&#39;: &#39;HPM Protein Tissue Specificity Index&#39;, &#39;value&#39;: 0.750509},
+ {&#39;name&#39;: &#39;GTEx Tissue Specificity Index&#39;, &#39;value&#39;: 0.888924},
+ {&#39;name&#39;: &#39;GTEx Tissue Specificity Index - Male&#39;, &#39;value&#39;: 0.879094},
+ {&#39;name&#39;: &#39;GTEx Tissue Specificity Index - Female&#39;, &#39;value&#39;: 0.888802}]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="p">[</span><span class="s2">&quot;ENSG00000130203&quot;</span><span class="p">][</span><span class="s2">&quot;Pharos&quot;</span><span class="p">][</span><span class="s2">&quot;gwas&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;gwasid&#39;: 27372,
+  &#39;pvalue&#39;: 0,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs429358&#39;}],
+  &#39;trait&#39;: &#39;Blood protein levels&#39;},
+ {&#39;gwasid&#39;: 27381,
+  &#39;pvalue&#39;: 0,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs429358&#39;}],
+  &#39;trait&#39;: &#39;Blood protein levels&#39;},
+ {&#39;gwasid&#39;: 63526,
+  &#39;pvalue&#39;: 0,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Blood protein levels&#39;},
+ {&#39;gwasid&#39;: 61680,
+  &#39;pvalue&#39;: 3e-322,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;TF_binding_site_variant&#39;, &#39;value&#39;: &#39;rs769446&#39;}],
+  &#39;trait&#39;: &#39;Low density lipoprotein cholesterol levels&#39;},
+ {&#39;gwasid&#39;: 95273,
+  &#39;pvalue&#39;: 8e-315,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Total cholesterol levels&#39;},
+ {&#39;gwasid&#39;: 67615,
+  &#39;pvalue&#39;: 1e-302,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Blood protein levels&#39;},
+ {&#39;gwasid&#39;: 70737,
+  &#39;pvalue&#39;: 1e-300,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Low density lipoprotein cholesterol levels&#39;},
+ {&#39;gwasid&#39;: 70740,
+  &#39;pvalue&#39;: 1e-300,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Low density lipoprotein cholesterol levels&#39;},
+ {&#39;gwasid&#39;: 108453,
+  &#39;pvalue&#39;: 1e-300,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Total cholesterol levels&#39;},
+ {&#39;gwasid&#39;: 108456,
+  &#39;pvalue&#39;: 1e-300,
+  &#39;snps&#39;: [{&#39;name&#39;: &#39;missense_variant&#39;, &#39;value&#39;: &#39;rs7412&#39;}],
+  &#39;trait&#39;: &#39;Total cholesterol levels&#39;}]
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Export-Results">
+<h2>Export Results<a class="headerlink" href="#Export-Results" title="Link to this heading">#</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pipe</span><span class="o">.</span><span class="n">export</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="ExtractTable_example.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Extract Table example</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="install.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Conda Install Instructions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Target Annotation Example</a><ul>
+<li><a class="reference internal" href="#Get-list-of-targets">Get list of targets</a></li>
+<li><a class="reference internal" href="#Create-and-Run-the-Workflow">Create and Run the Workflow</a></li>
+<li><a class="reference internal" href="#Annotation-results">Annotation results</a><ul>
+<li><a class="reference internal" href="#Fields-retrieved-from-OpenTargets-for-each-target">Fields retrieved from OpenTargets for each target</a></li>
+<li><a class="reference internal" href="#Examples-of-the-OT-fields">Examples of the OT fields</a></li>
+<li><a class="reference internal" href="#Here-we-show-a-single-evidence-for-ENSG00000130203-and-MONDO_0004975">Here we show a single evidence for ENSG00000130203 and MONDO_0004975</a></li>
+<li><a class="reference internal" href="#Fields-retrieved-from-Pharos-for-each-target">Fields retrieved from Pharos for each target</a></li>
+<li><a class="reference internal" href="#Examples-of-Pharos-fields">Examples of Pharos fields</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Export-Results">Export Results</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=f9338be5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=fd10adb8"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>

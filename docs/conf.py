@@ -16,12 +16,12 @@ from pathlib import Path
 from shutil import copy
 
 # Add project path
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../src"))
 from target_annotation import __version__  # pylint: disable=wrong-import-position
 
 DOCS_DIR = Path(__file__).parent.absolute()
 PROJECT_DIR = DOCS_DIR.parent
-PACKAGE_DIR = PROJECT_DIR / "target_annotation"
+PACKAGE_DIR = PROJECT_DIR / "src/target_annotation"
 TEMPLATE_DIR = DOCS_DIR / "_templates"
 EXTRA_APIDOC_DIR = DOCS_DIR / "api"
 APIDOC_DIR = DOCS_DIR / "modules"
