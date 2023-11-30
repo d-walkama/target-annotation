@@ -14,6 +14,7 @@ sphinxcontrib-serializinghtml
 sphinxext-opengraph
 myst_parser
 nbsphinx
+furo
 # for package
 requests
 requests-cache>=1.0.0
