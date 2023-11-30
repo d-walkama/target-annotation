@@ -13,6 +13,7 @@ sphinxcontrib-qthelp
 sphinxcontrib-serializinghtml
 sphinxext-opengraph
 myst_parser
+nbsphinx
 # for package
 requests
 requests-cache>=1.0.0
