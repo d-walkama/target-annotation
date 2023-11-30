@@ -1,0 +1,14 @@
+sphinx
+sphinx-autodoc-typehints
+sphinx-automodapi
+sphinx-basic-ng
+sphinx-copybutton
+sphinx-design
+sphinxcontrib-apidoc
+sphinxcontrib-applehelp
+sphinxcontrib-devhelp
+sphinxcontrib-htmlhelp
+sphinxcontrib-jsmath
+sphinxcontrib-qthelp
+sphinxcontrib-serializinghtml
+sphinxext-opengraph
