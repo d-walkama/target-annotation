@@ -28,7 +28,7 @@ APIDOC_DIR = DOCS_DIR / "modules"
 
 
 # General information about the project.
-project = "analysis-functions"
+project = "target-annotation"
 needs_sphinx = "4.0"
 master_doc = "index"
 source_suffix = [".md", ".rst"]
