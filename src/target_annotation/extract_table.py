@@ -312,12 +312,12 @@ class ExtractTable:
         self.associated_diseases_pharos_df = (
             self.annotate_ref_df["Pharos_diseases"]
             .dropna()
-            .apply(lambda x: {xx["name"]: xx["associationCount"] for xx in x})
+            .apply(lambda x: [{xx["name"]: xx["datasource_count"] for xx in x}])
         ).rename("Pharos associated diseases")
         self.associated_diseases_pharos_df_key = pd.DataFrame(
             {
                 "column": "Pharos associated diseases",
-                "key": "associated disease and their association count from Pharos",
+                "key": "associated disease and their datasource count from Pharos",
             },
             index=[0],
         )
