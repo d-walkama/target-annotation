@@ -1,2 +1,3 @@
 analysis_functions/_version.py export-subst
 * text=auto eol=lf
+src/target_annotation/_version.py export-subst

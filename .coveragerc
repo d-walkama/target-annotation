@@ -1,0 +1,4 @@
+[report]
+omit =
+    src/target_annotation/__main__.py
+    src/target_annotation/_version.py
