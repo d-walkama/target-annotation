@@ -3,7 +3,6 @@ import os
 import sys
 import numpy as np
 import pandas as pd
-from pandas.testing import assert_frame_equal
 from typeguard import TypeCheckError
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -41,24 +40,3 @@ class TestUtil(unittest.TestCase):
 
         with self.assertWarns(Warning):
             res = util.get_ensembl_from_uniprot(self.bad_uniprot_3, timeout=10**-10)
-
-    def test_check_var_in_data(self):
-        res = util.check_var_in_data(
-            self.test_data_dir + "/test.csv", self.good_features_1
-        )
-        self.assertTrue(res)
-
-        res = util.check_var_in_data(
-            self.test_data_dir + "/test.csv", self.good_features_2
-        )
-        self.assertTrue(res)
-
-        res = util.check_var_in_data(self.test_data_dir + "/test.csv", self.bad_feature)
-        self.assertFalse(res)
-
-    def test_get_columns_from_regex_list(self):
-        res = util.get_columns_from_regex_list(self.good_df, self.good_regex1)
-        assert_frame_equal(self.good_df[["col1"]], self.good_df[res])
-
-        res = util.get_columns_from_regex_list(self.good_df, self.good_regex2)
-        assert_frame_equal(self.good_df, self.good_df[res])

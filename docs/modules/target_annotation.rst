@@ -11,4 +11,5 @@ Modules in ``target_annotation`` package:
    target_annotation.ontology_source
    target_annotation.open_targets
    target_annotation.pharos
+   target_annotation.stringdb
    target_annotation.target_annotation

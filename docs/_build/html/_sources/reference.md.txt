@@ -18,7 +18,6 @@ The following modules are mainly for internal use, and are relevant for contribu
 :maxdepth: 2
 modules/target_annotation.open_targets
 modules/target_annotation.pharos
-modules/target_annotation.utils.retry
-modules/target_annotation.utils.exceptions
+modules/target_annotation.stringdb
 modules/target_annotation.utils.util
 ```

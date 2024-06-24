@@ -11,9 +11,9 @@ Notes:
 """
 import os
 import sys
-from os.path import join
 from pathlib import Path
-from shutil import copy
+from sphinx_automodapi import automodsumm
+from sphinx_automodapi.utils import find_mod_objs
 
 # Add project path
 sys.path.insert(0, os.path.abspath("../src"))
@@ -140,7 +140,7 @@ html_theme = "furo"
 html_theme_options = {
 #     "light_logo": "requests-cache-logo-light.webp",
 #     "dark_logo": "requests-cache-logo-dark.webp",
-    "sidebar_hide_name": True,
+    "sidebar_hide_name": False,
     "light_css_variables": {
         "color-brand-primary": "#0288d1",
         "color-brand-content": "#2a5adf",
@@ -163,8 +163,6 @@ def patch_automodapi(app):
     """Monkey-patch the automodapi extension to exclude imported members:
     https://github.com/astropy/sphinx-automodapi/blob/master/sphinx_automodapi/automodsumm.py#L135
     """
-    from sphinx_automodapi import automodsumm
-    from sphinx_automodapi.utils import find_mod_objs
 
     automodsumm.find_mod_objs = lambda *args: find_mod_objs(args[0], onlylocals=True)
 

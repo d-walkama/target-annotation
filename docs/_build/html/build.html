@@ -3,21 +3,21 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="<no title>" />
+<meta property="og:title" content="Conda Build Instructions" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="BUILD_INSTRUCTIONS.html" />
-<meta property="og:site_name" content="analysis-functions" />
+<meta property="og:url" content="build.html" />
+<meta property="og:site_name" content="target-annotation" />
 <meta property="og:description" content="In order to build conda packages, you must install conda build:, Then ensure you have a clean working tree (i.e. git status returns “nothing to commit, working tree clean”) and that you have a git ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="/_images/social_previews/summary_BUILD_INSTRUCTIONS_928aedce.png" />
+<meta property="og:image" content="/None" />
 <meta property="og:image:alt" content="In order to build conda packages, you must install conda build:, Then ensure you have a clean working tree (i.e. git status returns “nothing to commit, worki..." />
 <meta name="description" content="In order to build conda packages, you must install conda build:, Then ensure you have a clean working tree (i.e. git status returns “nothing to commit, working tree clean”) and that you have a git ..." />
 <meta name="twitter:card" content="summary_large_image" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Conda Install Instructions" href="install.html" /><link rel="prev" title="Target-Annotation" href="index.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
-        <title>&lt;no title&gt; - analysis-functions 1.0.0+0.g7994698.dirty documentation</title>
+        <title>Conda Build Instructions - target-annotation 1.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=649a27d8" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
@@ -146,7 +146,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">analysis-functions 1.0.0+0.g7994698.dirty documentation</div></a>
+      <a href="index.html"><div class="brand">target-annotation 1.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -169,6 +169,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
+  <span class="sidebar-brand-text">target-annotation 1.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -176,7 +177,8 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Conda Build Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Conda Install Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TargetAnnotation_example.html">Target Annotation Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ExtractTable_example.html">Extract Table example</a></li>
@@ -185,8 +187,7 @@
 <li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.extract_table.html">Extract Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.open_targets.html">Open Targets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.pharos.html">Pharos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.retry.html">Retry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.stringdb.html">StringDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules/target_annotation.utils.util.html">Util</a></li>
 </ul>
 </li>
@@ -224,7 +225,9 @@
           </label>
         </div>
         <article role="main">
-          <ol class="arabic">
+          <section id="conda-build-instructions">
+<h1>Conda Build Instructions<a class="headerlink" href="#conda-build-instructions" title="Link to this heading">#</a></h1>
+<ol class="arabic">
 <li><p>In order to build conda packages, you must install conda build:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>conda-build
 </pre></div>
@@ -238,7 +241,7 @@ git<span class="w"> </span>tag<span class="w"> </span>vX.X.X
 </li>
 </ol>
 <p>The reason we want to do this is so that the versioneer package sets the package version equal to the git tag. If the working directory is not clean, the package version will be tagged as “dirty”.</p>
-<ol class="arabic" start="3">
+<ol class="arabic">
 <li><p>Modify requirements.txt to include any package requirements.</p></li>
 <li><p>Run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./make_build
@@ -247,14 +250,33 @@ git<span class="w"> </span>tag<span class="w"> </span>vX.X.X
 </li>
 </ol>
 <p>This will build the conda package within the repo, allowing versioneer to do its magic. It will then index the channel. Finally, it will rebuild the docs and commit/push the docs.</p>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="install.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Conda Install Instructions</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -275,7 +297,7 @@ git<span class="w"> </span>tag<span class="w"> </span>vX.X.X
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=f9338be5"></script>
+</div><script src="_static/documentation_options.js?v=fc837d61"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>

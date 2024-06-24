@@ -6,6 +6,7 @@
 ```{toctree}
 :maxdepth: 2
 
+build
 install
 TargetAnnotation_example
 ExtractTable_example
