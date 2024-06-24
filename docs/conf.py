@@ -150,7 +150,7 @@ html_theme_options = {
         "color-brand-content": "#368ce2",
     },
 }
-
+html_title = "target-annotation package"
 
 def setup(app):
     """Run some additional steps after the Sphinx builder is initialized"""
