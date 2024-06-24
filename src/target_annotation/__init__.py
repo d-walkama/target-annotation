@@ -1,12 +1,6 @@
 """
 Collection of modules for analyzing, annotating, and expanding upon results from REFS.
 """
-from . import _version
-# import json
-# from packaging import version
-# import os
-
-__version__ = _version.get_versions()["version"]
 
 from .target_annotation import TargetAnnotation
 from .open_targets import (
@@ -29,3 +23,6 @@ from .extract_table import ExtractTable
 
 #     if version.parse(__version__) < version.parse(newest_version):
 #         print(f"Newer version available: {newest_version}. Please update.")
+
+from . import _version
+__version__ = _version.get_versions()['version']

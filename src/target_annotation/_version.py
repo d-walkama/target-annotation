@@ -53,7 +53,7 @@ def get_config() -> VersioneerConfig:
     cfg.style = ""
     cfg.tag_prefix = ""
     cfg.parentdir_prefix = "None"
-    cfg.versionfile_source = "analysis_functions/_version.py"
+    cfg.versionfile_source = "target_annotation/_version.py"
     cfg.verbose = False
     return cfg
 
