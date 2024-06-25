@@ -1,4 +1,4 @@
-"""requests-cache documentation build config.
+"""target-annotation documentation build config.
 
 Notes:
 
@@ -111,8 +111,7 @@ autosectionlabel_prefix_document = True
 #     'special-members': '__init__',
 # }
 autoclass_content = "both"
-# autodoc_typehints = "description"
-# always_document_param_types = True
+
 
 # Use apidoc to auto-generate rst sources
 apidoc_module_dir = str(PACKAGE_DIR)
@@ -124,7 +123,6 @@ apidoc_separate_modules = True
 apidoc_toc_file = False
 
 # HTML general settings
-# html_favicon = join("_static", "favicon.ico")
 html_css_files = [
     "table.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
@@ -138,8 +136,6 @@ pygments_dark_style = "material"
 # HTML theme settings
 html_theme = "furo"
 html_theme_options = {
-#     "light_logo": "requests-cache-logo-light.webp",
-#     "dark_logo": "requests-cache-logo-dark.webp",
     "sidebar_hide_name": False,
     "light_css_variables": {
         "color-brand-primary": "#0288d1",
@@ -156,7 +152,6 @@ def setup(app):
     """Run some additional steps after the Sphinx builder is initialized"""
     app.add_css_file("collapsible_container.css")
     app.connect("builder-inited", patch_automodapi)
-    # app.connect("builder-inited", copy_module_docs)
 
 
 def patch_automodapi(app):
@@ -165,9 +160,3 @@ def patch_automodapi(app):
     """
 
     automodsumm.find_mod_objs = lambda *args: find_mod_objs(args[0], onlylocals=True)
-
-
-# def copy_module_docs(app):
-#     """Copy manually written doc sources to apidoc directory"""
-#     for doc in EXTRA_APIDOC_DIR.iterdir():
-#         copy(doc, APIDOC_DIR)

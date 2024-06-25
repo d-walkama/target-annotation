@@ -1,13 +1,13 @@
 (index-page)=
 # Target-Annotation
-<!-- Include Readme contents, except for the links to readthedocs, which would be redundant here -->
+<!-- Include Readme contents -->
+```{include} ../README.md
+```
 
-# Contents
+## Contents
 ```{toctree}
 :maxdepth: 2
 
-<!-- build -->
-<!-- install -->
 TargetAnnotation_example
 ExtractTable_example
 reference
