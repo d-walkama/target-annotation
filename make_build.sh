@@ -4,7 +4,8 @@ git add -u
 cd docs
 make html
 git add _build
-git commit -m "updating docs"
+read -p "commit message: " COMMIT_MSG
+git commit -m "$COMMIT_MSG"
 cd ..
 
 echo "current version: $(git describe --tags --dirty --always)"
@@ -20,10 +21,7 @@ read -s -n 1 key
 
 case $key in
     y|Y)
-        result=$(python -m build)
-        if [ $? -ne 0 ]; then
-            exit 1
-        fi
+        python -m build
         ;;
     *)
         exit 0

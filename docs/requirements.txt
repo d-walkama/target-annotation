@@ -16,14 +16,3 @@ myst_parser
 nbsphinx
 furo
 linkify-it-py
-# for package
-requests
-requests-cache>=1.0.0
-typeguard>=4.0.0
-pandas
-numpy
-tqdm
-ipykernel
-seaborn
-stopit
-openpyxl

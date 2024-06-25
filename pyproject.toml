@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "target-annotation"
 dynamic = ["version"]
-description = "This package will provide modules to annotate targets"
+description = "This package provides modules to annotate targets"
 authors = [
   { name="Derek Walkama", email="derek.m.walkama@gmail.com" },
 ]
@@ -18,7 +18,6 @@ dependencies = [
     "numpy",
     "tqdm",
     "ipykernel",
-    "seaborn",
     "stopit",
     "openpyxl"
 ]
